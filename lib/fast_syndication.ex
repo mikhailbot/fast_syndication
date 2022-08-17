@@ -1,11 +1,18 @@
 defmodule FastSyndication do
+  @moduledoc """
+  Minimal wrapper around Rust NIFs for fast RSS and Atom feed parsing.
+  """
   defmodule Native do
+    @moduledoc false
     use Rustler, otp_app: :fast_syndication, crate: "fastsyndication"
 
     def parse_atom(_a), do: :erlang.nif_error(:nif_not_loaded)
     def parse_rss(_a), do: :erlang.nif_error(:nif_not_loaded)
   end
 
+  @doc """
+  Parse an atom string into a map.
+  """
   def parse(""), do: {:error, "Cannot parse blank string"}
 
   def parse(%{atom_string: atom_string}) when is_binary(atom_string) do
