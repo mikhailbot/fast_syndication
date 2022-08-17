@@ -13,7 +13,8 @@ defmodule FastSyndication.MixProject do
       deps: deps(),
 
       # hex
-      description: "Fast Elixir RSS and Atom feed parser",
+      docs: docs(),
+      description: description(),
       package: package()
     ]
   end
@@ -28,8 +29,23 @@ defmodule FastSyndication.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:rustler, "~> 0.25.0"}
+      {:rustler, "~> 0.25.0"},
+      {:ex_doc, "~> 0.27", only: :dev, runtime: false}
     ]
+  end
+
+  defp docs() do
+    [
+      main: "readme",
+      markdown_processor: ExDoc.Markdown.Earmark,
+      extras: ["README.md", "CHANGELOG.md", "LICENSE"],
+      source_ref: "v#{@version}",
+      source_url: @source_url
+    ]
+  end
+
+  defp description() do
+    "Minimal wrapper around Rust NIFs for fast RSS and Atom feed parsing."
   end
 
   defp package() do
