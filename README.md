@@ -1,6 +1,10 @@
 # FastSyndication
 
 Minimal wrapper around Rust NIFs for fast RSS and Atom feed parsing
+- [rss](https://github.com/rust-syndication/rss) for parsing RSS feeds
+- [atom](https://github.com/rust-syndication/atom) for parsing Atom feeds
+
+Heavily based on the existing [FastRSS](https://github.com/avencera/fast_rss) wrapper.
 
 ## Usage
 

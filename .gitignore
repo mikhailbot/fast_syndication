@@ -24,3 +24,8 @@ fast_syndication-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+.elixir_ls
+priv/native/libfastsyndication.so
+native/fastsyndication/target
+/native/*/target
