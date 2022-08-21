@@ -9,6 +9,6 @@ Heavily based on the existing [FastRSS](https://github.com/avencera/fast_rss) wr
 ## Usage
 
 ```elixir
-iex(1)>  {:ok, map_of_rss} = FastRSS.parse(%{rss_string: "...rss_feed_string..."})
-iex(2)>  {:ok, map_of_atom} = FastRSS.parse(%{atom_string: "...rss_feed_string..."})
+iex(1)>  {:ok, map_of_atom} = FastRSS.parse_atom("...atom_feed_string...")
+iex(2)>  {:ok, map_of_rss} = FastRSS.parse_rss("...rss_feed_string...")
 ```
