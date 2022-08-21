@@ -3,11 +3,11 @@ defmodule FastSyndicationTest do
   doctest FastSyndication
 
   test "parsing atom feed" do
-    assert :ok == FastSyndication.parse(%{atom_string: atom()}) |> elem(0)
+    assert :ok == FastSyndication.parse_atom(atom()) |> elem(0)
   end
 
   test "parsing rss feed" do
-    assert :ok = FastSyndication.parse(%{rss_string: rss()}) |> elem(0)
+    assert :ok = FastSyndication.parse_rss(rss()) |> elem(0)
   end
 
   defp atom() do
